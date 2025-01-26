@@ -1,0 +1,164 @@
+/*
+  Author: liqian_liukaining
+  Description: JSON 解析工具的主样式文件
+  Date: 2025-01-26
+*/
+
+:root {
+    --primary: #409eff;
+    --success: #67c23a;
+    --warning: #e6a23c;
+    --danger: #f56c6c;
+    --secondary: #909399;
+    --background: #f8f9fa;
+    --text-primary: #2c3e50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+.container {
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.control-bar {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tool-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.btn-success { background: var(--success); color: white; }
+.btn-warning { background: var(--warning); color: white; }
+.btn-danger { background: var(--danger); color: white; }
+.btn-secondary { background: var(--secondary); color: white; }
+
+.editor-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    height: 75vh;
+    min-width: 1200px;
+}
+
+.editor-box {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 600px;
+    overflow: hidden;
+}
+
+.editor-header {
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+#input {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: none;
+    resize: none;
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    outline: none;
+    background: #fff;
+    color: var(--text-primary);
+}
+
+#input:focus {
+    box-shadow: inset 0 0 0 2px var(--primary);
+}
+
+#input.invalid {
+    box-shadow: inset 0 0 0 2px var(--danger);
+}
+
+#errorMarker {
+    position: absolute;
+    background: rgba(245,108,108,0.2);
+    pointer-events: none;
+    display: none;
+}
+
+.error-loc {
+    color: var(--danger);
+    margin-left: 15px;
+    font-size: 0.9em;
+}
+
+#output {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+    white-space: pre-wrap;
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #fcfcfc;
+}
+
+.char-count {
+    font-size: 0.9em;
+    color: var(--secondary);
+}
+
+.status-indicator {
+    margin-left: auto;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.status-indicator.success { background: #e1f3d8; color: #67c23a; }
+.status-indicator.warning { background: #faecd8; color: #e6a23c; }
+.status-indicator.error { background: #fde2e2; color: #f56c6c; }
+.status-indicator.info { background: #f4f4f5; color: #909399; }

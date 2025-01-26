@@ -1,0 +1,29 @@
+/*
+  Author: liqian_liukaining
+  Description: JSON 语法高亮样式文件
+  Date: 2025-01-26
+*/
+
+.json-key { color: #d63200; }
+.json-string { color: #007936; }
+.json-number { color: #164; }
+.json-boolean { color: #2196F3; }
+.json-null { color: #ca1243; }
+.json-punctuation { color: #999; }
+
+pre > div {
+    position: relative;
+    padding-left: 3.5em;
+}
+
+pre > div::before {
+    content: attr(data-line);
+    position: absolute;
+    left: 0;
+    width: 2.5em;
+    text-align: right;
+    color: #999;
+    border-right: 1px solid #eee;
+    padding-right: 0.8em;
+    margin-right: 0.8em;
+}

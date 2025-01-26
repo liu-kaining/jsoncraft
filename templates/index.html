@@ -1,0 +1,71 @@
+<!--
+  Author: liqian_liukaining
+  Description: JSON 解析工具的前端页面模板
+  Date: 2025-01-26
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业JSON解析工具</title>
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/json-highlight.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 控制栏 -->
+        <div class="control-bar">
+            <div class="tool-group">
+                <button class="btn btn-success" onclick="processJSON('format')">
+                    <i class="fas fa-align-left"></i> 格式化
+                </button>
+                <button class="btn btn-warning" onclick="processJSON('compress')">
+                    <i class="fas fa-compress"></i> 压缩
+                </button>
+            </div>
+            <div class="tool-group">
+                <button class="btn btn-secondary" onclick="copyToClipboard()">
+                    <i class="far fa-copy"></i> 复制
+                </button>
+                <button class="btn btn-danger" onclick="clearAll()">
+                    <i class="fas fa-eraser"></i> 清空
+                </button>
+            </div>
+            <div class="status-indicator" id="status"></div>
+        </div>
+
+        <!-- 编辑区域 -->
+        <div class="editor-container">
+            <div class="editor-box input-box">
+                <div class="editor-header">
+                    <span>输入JSON</span>
+                    <div class="char-count">
+                        字符数: <span id="charCount">0</span>
+                        <span class="error-loc" id="errorLoc"></span>
+                    </div>
+                </div>
+                <div class="input-wrapper">
+                    <textarea id="input" placeholder="粘贴JSON内容或直接输入..."
+                            spellcheck="false"
+                            autofocus
+                            oninput="validateJSON()"></textarea>
+                    <div id="errorMarker"></div>
+                </div>
+            </div>
+
+            <div class="editor-box">
+                <div class="editor-header">
+                    <span>解析结果</span>
+                </div>
+                <pre id="output"></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
