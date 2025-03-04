@@ -19,4 +19,4 @@ def index():
 
 if __name__ == '__main__':
     # 启动 Flask 服务
-    app.run(port=5000, debug=False)
+    app.run(port=8082, debug=False)

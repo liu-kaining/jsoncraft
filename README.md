@@ -74,7 +74,7 @@
    ```
 
 3. **访问应用**：
-   打开浏览器，访问 `http://localhost:5000`。
+   打开浏览器，访问 `http://localhost:8082`。
 
 ---
 
@@ -100,11 +100,11 @@
 
 3. **运行容器**：
    ```bash
-   docker run -d -p 5000:5000 --name jsoncraft jsoncraft
+   docker run -d -p 8082:8082 --name jsoncraft jsoncraft
    ```
 
 4. **访问应用**：
-   打开浏览器，访问 `http://localhost:5000`。
+   打开浏览器，访问 `http://localhost:8082`。
 
 ---
 
