@@ -63,17 +63,29 @@
 - **错误定位**：基于 JSON 解析错误信息实现精准定位
 
 ### 快速开始
-1. **安装依赖**：
+1. **创建并激活虚拟环境**：
+   ```bash
+   # 创建虚拟环境
+   python -m venv venv
+   
+   # 激活虚拟环境（MacOS/Linux）
+   source venv/bin/activate
+   
+   # 激活虚拟环境（Windows）
+   # .\venv\Scripts\activate
+   ```
+
+2. **安装依赖**：
    ```bash
    pip install flask
    ```
 
-2. **启动服务**：
+3. **启动服务**：
    ```bash
    python app.py
    ```
 
-3. **访问应用**：
+4. **访问应用**：
    打开浏览器，访问 `http://localhost:8082`。
 
 ---
